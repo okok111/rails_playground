@@ -11,10 +11,6 @@
                     <%= image_tag "nonono.png", size: '250x200' %>
                 <% end %>
             </p>
-            <% t.post_ingredient.each do |f| %>
-                <p><%= f.ingredient %></p>
-                <p><%= f.quantity %></p>
-            <% end %>
             <% if user_signed_in? %>
                 <% if current_user.already_liked?(t) %>
                     <%= link_to post_like_path(id: t.id, post_id: t.id), method: :delete do %>
